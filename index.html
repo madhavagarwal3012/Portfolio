@@ -205,14 +205,16 @@
 </head>
 
 <body>
-    <!-- Start Header -->
+    <!-- Header -->
     <table id="header" border="0" width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td>
-                <font face="arial" color="#f3971b" size="24">
-                    <span class="fa fa-user-circle" aria-hidden="true"></span>
-                    Madhav Agarwal
-                </font>
+                <a href="#" id="header-name">
+                    <font face="arial" color="#f3971b" size="24">
+                        <span class="fa fa-user-circle" aria-hidden="true"></span>
+                        Madhav Agarwal
+                    </font>
+                </a>
             </td>
             <td>
                 <a href="#home">Home</a>
@@ -223,8 +225,8 @@
         </tr>
     </table>
     <!-- End Header -->
-    
-    <!-- Start Home -->
+
+    <!-- Home -->
     <table id="home" border="0" width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td>
@@ -235,7 +237,7 @@
     </table>
     <!-- End Home -->
 
-    <!-- Start About -->
+    <!-- About -->
     <table id="about" border="0" width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td>
@@ -249,7 +251,7 @@
     </table>
     <!-- End About -->
 
-    <!-- Start Achievements -->
+    <!-- Achievements -->
     <table id="achievements" border="0" width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td>
@@ -279,7 +281,7 @@
         }
     </style>
 
-    <!-- Start Contact -->
+    <!-- Contact -->
     <table id="contact" border="0" width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td style="text-align: center;">
@@ -299,37 +301,36 @@
         </tr>
     </table>
     <!-- End Contact -->
-    
-    <!-- Start Footer -->
+
+    <!-- Footer -->
     <table id="footer" border="0" width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td>
-                <!-- Updated sequence of footer links -->
                 <a href="https://www.linkedin.com/in/madhavagarwal3012/" target="_blank">
                     <img src="https://th.bing.com/th?id=ODLS.9b09ead8-820d-4f04-8404-a0e4ca630dc2&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="LinkedIn">
                     LinkedIn
                 </a>
-                &nbsp; &nbsp; <!-- Add some space between links -->
+                &nbsp; &nbsp;
                 <a href="mailto:madhavaggarwal3584@hotmail.com" target="_blank">
                     <img src="https://th.bing.com/th?id=ODLS.5e7ae0d8-1132-4a2a-8aa8-cb76156d41b8&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="Email">
                     Email
                 </a>
-                &nbsp; &nbsp; <!-- Add some space between links -->
+                &nbsp; &nbsp;
                 <a href="https://github.com/madhavagarwal3012" target="_blank">
                     <img src="https://th.bing.com/th?id=ODLS.fe916855-7a5a-4f44-b52e-1c5c31f0329d&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="GitHub">
                     GitHub
                 </a>
-                &nbsp; &nbsp; <!-- Add some space between links -->
+                &nbsp; &nbsp;
                 <a href="https://leetcode.com/madhavagarwal3012/" target="_blank">
                     <img src="https://th.bing.com/th?id=ODLS.d12199cd-5cdf-4fb6-81b3-6e18455eaf9c&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2">
                     LeetCode
                 </a>
-                &nbsp; &nbsp; <!-- Add some space between links -->
+                &nbsp; &nbsp;
                 <a href="https://www.hackerrank.com/madhvagarwal3012?hr_r=1" target="_blank">
                     <img src="https://th.bing.com/th?id=ODLS.9c5c4e70-2eae-4474-8b38-0caa354a4865&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="HackerRank">
                     HackerRank
                 </a>
-                &nbsp; &nbsp; <!-- Add some space between links -->
+                &nbsp; &nbsp;
                 <a href="https://auth.geeksforgeeks.org/user/madhavagarwal3012" target="_blank">
                     <img src="https://media.geeksforgeeks.org/gfg-gg-logo.svg" alt="GeeksforGeeks">
                     GeeksforGeeks
@@ -340,6 +341,9 @@
     <!-- End Footer -->
 
     <script>
+        document.getElementById("header-name").addEventListener("click", function() {
+        alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
+    });
         document.getElementById("contact-form").addEventListener("submit", function(event) {
             event.preventDefault();
             const name = document.getElementById("name").value;
