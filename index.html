@@ -362,23 +362,21 @@
 var audio = document.getElementById("myAudio");
     var image = document.getElementById("myPhoto");
 
-    // Create an Intersection Observer to monitor the image visibility
     var observer = new IntersectionObserver(function(entries) {
         if (entries[0].isIntersecting) {
-            playAudio(); // Image is visible, start audio playback
+            playAudio();
         } else {
-            stopAudio(); // Image is not visible, stop audio playback
+            stopAudio();
         }
     });
 
-    // Observe the image element
     observer.observe(image);
 
     function playAudio() {
         if (audio.paused) {
             audio.play()
                 .then(() => {
-                    // Audio is playing
+                    console.log("Audio playback started");
                 })
                 .catch(error => {
                     console.error("Audio playback error:", error);
@@ -388,25 +386,28 @@ var audio = document.getElementById("myAudio");
     }
 
     function stopAudio() {
-        audio.pause();
-        audio.currentTime = 0;
+        if (!audio.paused) {
+            audio.pause();
+            audio.currentTime = 0;
+            console.log("Audio playback stopped");
+        }
     }
 
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const subject = document.getElementById("subject").value; // Get the subject from the input field
-    const message = document.getElementById("message").value;
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
 
-    const recipient = "madhavaggarwal3584@hotmail.com"; // Replace with your email address
-    const encodedSubject = encodeURIComponent(subject); // Encode the subject
-    const body = encodeURIComponent(message);
+        const recipient = "madhavaggarwal3584@hotmail.com";
+        const encodedSubject = encodeURIComponent(subject);
+        const body = encodeURIComponent(message);
 
-    const mailtoLink = "mailto:" + recipient + "?subject=" + encodedSubject + "&body=" + body;
+        const mailtoLink = "mailto:" + recipient + "?subject=" + encodedSubject + "&body=" + body;
 
-    window.location.href = mailtoLink;
-});
+        window.location.href = mailtoLink;
+    });
 </script>
 
 
