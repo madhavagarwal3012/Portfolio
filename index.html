@@ -360,38 +360,35 @@
 
     <script>
 var audio = document.getElementById("myAudio");
-var playButton = document.getElementById("playButton");
-var closeButton = document.getElementById("closeButton");
-var audioPlaying = false; // Track the audio playing state
 
-// Listen for the unload event to automatically stop the audio when the page is closed
-window.addEventListener("unload", function() {
-    stopAudio();
+// Listen for the click event on the image link
+document.getElementById("image-link").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    toggleAudio(); // Toggle audio playback
 });
 
 function toggleAudio() {
-    if (audioPlaying) {
-        stopAudio();
+    if (audio.paused) {
+        playAudio();
     } else {
-        audio.play()
-            .then(() => {
-                playButton.style.display = "none";
-                closeButton.style.display = "block";
-                audioPlaying = true;
-            })
-            .catch(error => {
-                console.error("Audio playback error:", error);
-                alert("Audio playback is blocked by the browser.");
-            });
+        stopAudio();
     }
+}
+
+function playAudio() {
+    audio.play()
+        .then(() => {
+            // Audio is playing
+        })
+        .catch(error => {
+            console.error("Audio playback error:", error);
+            alert("Audio playback is blocked by the browser. Please interact with the page to play audio.");
+        });
 }
 
 function stopAudio() {
     audio.pause();
     audio.currentTime = 0;
-    closeButton.style.display = "none";
-    playButton.style.display = "block";
-    audioPlaying = false;
 }
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
