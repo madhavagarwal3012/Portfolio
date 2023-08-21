@@ -360,22 +360,22 @@
 
     <script>
 var audio = document.getElementById("myAudio");
+    var image = document.getElementById("myPhoto");
 
-        // Toggle audio playback when the image is clicked
-        document.getElementById("image-link").addEventListener("click", function(event) {
-            event.preventDefault(); // Prevent the default link behavior
-            toggleAudio();
-        });
-
-        function toggleAudio() {
-            if (audio.paused) {
-                playAudio();
-            } else {
-                stopAudio();
-            }
+    // Create an Intersection Observer to monitor the image visibility
+    var observer = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+            playAudio(); // Image is visible, start audio playback
+        } else {
+            stopAudio(); // Image is not visible, stop audio playback
         }
+    });
 
-        function playAudio() {
+    // Observe the image element
+    observer.observe(image);
+
+    function playAudio() {
+        if (audio.paused) {
             audio.play()
                 .then(() => {
                     // Audio is playing
@@ -385,16 +385,12 @@ var audio = document.getElementById("myAudio");
                     alert("Audio playback is blocked by the browser. Please interact with the page to play audio.");
                 });
         }
+    }
 
-        function stopAudio() {
-            audio.pause();
-            audio.currentTime = 0;
-        }
-
-        // This code is to prevent audio playback when the page is closed or navigated away
-        window.addEventListener("beforeunload", function() {
-            stopAudio();
-        });
+    function stopAudio() {
+        audio.pause();
+        audio.currentTime = 0;
+    }
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
