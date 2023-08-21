@@ -362,24 +362,28 @@
 var audio = document.getElementById("myAudio");
 var playButton = document.getElementById("playButton");
 var closeButton = document.getElementById("closeButton");
+var audioPlaying = false; // Track the audio playing state
 
-// Listen for the visibilitychange event to automatically stop the audio when tab is hidden
-document.addEventListener("visibilitychange", function() {
-    if (document.visibilityState === "hidden") {
-        stopAudio();
-    }
+// Listen for the unload event to automatically stop the audio when the page is closed
+window.addEventListener("unload", function() {
+    stopAudio();
 });
 
-function playAudio() {
-    audio.play()
-        .then(() => {
-            playButton.style.display = "none";
-            closeButton.style.display = "block";
-        })
-        .catch(error => {
-            console.error("Audio playback error:", error);
-            alert("Audio playback is blocked by the browser.");
-        });
+function toggleAudio() {
+    if (audioPlaying) {
+        stopAudio();
+    } else {
+        audio.play()
+            .then(() => {
+                playButton.style.display = "none";
+                closeButton.style.display = "block";
+                audioPlaying = true;
+            })
+            .catch(error => {
+                console.error("Audio playback error:", error);
+                alert("Audio playback is blocked by the browser.");
+            });
+    }
 }
 
 function stopAudio() {
@@ -387,6 +391,7 @@ function stopAudio() {
     audio.currentTime = 0;
     closeButton.style.display = "none";
     playButton.style.display = "block";
+    audioPlaying = false;
 }
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
