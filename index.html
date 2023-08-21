@@ -360,23 +360,24 @@
     <!-- End Footer -->
 
     <script>
-var audio = new Audio("audio.m4a"); // Create a new Audio object
+var audio = document.getElementById("myAudio"); // Get the audio element
+var playButton = document.getElementById("playButton"); // Get the play button element
 
-// Function to toggle audio playback
-function toggleAudio() {
-    if (audio.paused) {
-        audio.play()
-            .then(() => {
-                document.getElementById("playButton").style.display = "none"; // Hide play button
-            })
-            .catch(error => {
-                // Autoplay prevented by browser
-                // Handle the error or provide user instructions
-            });
-    } else {
-        audio.pause();
-    }
+// Function to play the audio
+function playAudio() {
+    audio.play()
+        .then(() => {
+            playButton.style.display = "none"; // Hide the play button
+        })
+        .catch(error => {
+            // Autoplay prevented by browser
+            // Handle the error or provide user instructions
+        });
 }
+
+// Attach the playAudio function to the button click event
+playButton.addEventListener("click", playAudio);
+
 
 document.getElementById("header-name").addEventListener("click", function() {
     alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
