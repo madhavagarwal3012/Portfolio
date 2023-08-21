@@ -360,37 +360,34 @@
 
     <script>
         var audio = document.getElementById("myAudio");
-    var isAudioPlaying = false;
-
-    // Function to toggle audio playback
-    function toggleAudio() {
-        if (isAudioPlaying) {
-            audio.pause();
-        } else {
-            audio.play()
-                .then(() => {
-                    // Autoplay started
-                })
-                .catch(error => {
-                    // Autoplay prevented by browser
-                    // Handle the error or provide user instructions
-                });
-        }
-        isAudioPlaying = !isAudioPlaying;
-    }
-    
-    // Function to attach image click listener
-    function attachImageClickListener() {
         var image = document.getElementById("myPhoto");
-        image.addEventListener("click", toggleAudio);
-    }
 
-    document.getElementById("header-name").addEventListener("click", function() {
-        alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
-    });
+        // Function to toggle audio playback
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play()
+                    .then(() => {
+                        // Autoplay started
+                    })
+                    .catch(error => {
+                        // Autoplay prevented by browser
+                        // Handle the error or provide user instructions
+                    });
+                image.removeEventListener("click", toggleAudio); // Remove the event listener
+            } else {
+                audio.pause();
+            }
+        }
+
+        // Function to attach image click listener
+        function attachImageClickListener() {
+            image.addEventListener("click", toggleAudio);
+        }
+
         document.getElementById("header-name").addEventListener("click", function() {
-        alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
-    });
+            alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
+        });
+
         document.getElementById("contact-form").addEventListener("submit", function(event) {
             event.preventDefault();
             const name = document.getElementById("name").value;
