@@ -375,13 +375,6 @@ var audio = document.getElementById("myAudio");
     function playAudio() {
         if (audio.paused) {
             audio.play()
-                .then(() => {
-                    console.log("Audio playback started");
-                })
-                .catch(error => {
-                    console.error("Audio playback error:", error);
-                    alert("Audio playback is blocked by the browser. Please interact with the page to play audio.");
-                });
         }
     }
 
