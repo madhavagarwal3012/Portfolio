@@ -384,11 +384,14 @@ function stopAudio() {
     playButton.style.display = "block";
 }
 
-window.addEventListener("beforeunload", function() {
-    stopAudio();
+// Modified: Added event listener to the image itself
+document.getElementById("myPhoto").addEventListener("click", function() {
+    playAudio();
 });
-document.getElementById("header-name").addEventListener("click", function() {
-    alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
+
+// Modified: Added event listener to the close button
+document.getElementById("closeButton").addEventListener("click", function() {
+    stopAudio();
 });
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
