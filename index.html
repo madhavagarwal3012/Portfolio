@@ -363,15 +363,14 @@
 var audio = document.getElementById("myAudio"); // Get the audio element
 var playButton = document.getElementById("playButton"); // Get the play button element
 
-// Function to play the audio
 function playAudio() {
     audio.play()
         .then(() => {
             playButton.style.display = "none"; // Hide the play button
         })
         .catch(error => {
-            // Autoplay prevented by browser
-            // Handle the error or provide user instructions
+            console.error("Audio playback error:", error); // Log the error
+            alert("Audio playback is blocked by the browser."); // Provide user feedback
         });
 }
 
