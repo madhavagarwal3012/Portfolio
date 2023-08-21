@@ -365,6 +365,13 @@ var audio = document.getElementById("myAudio");
 var playButton = document.getElementById("playButton");
 var closeButton = document.getElementById("closeButton");
 
+// Listen for the visibilitychange event to automatically stop the audio when tab is hidden
+document.addEventListener("visibilitychange", function() {
+    if (document.visibilityState === "hidden") {
+        stopAudio();
+    }
+});
+
 function playAudio() {
     audio.play()
         .then(() => {
@@ -383,16 +390,6 @@ function stopAudio() {
     closeButton.style.display = "none";
     playButton.style.display = "block";
 }
-
-// Modified: Added event listener to the image itself
-document.getElementById("myPhoto").addEventListener("click", function() {
-    playAudio();
-});
-
-// Modified: Added event listener to the close button
-document.getElementById("closeButton").addEventListener("click", function() {
-    stopAudio();
-});
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
