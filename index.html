@@ -359,37 +359,35 @@
     <!-- End Footer -->
 
     <script>
-var audio = document.getElementById("myAudio");
+var audio; // Declare the audio variable globally
+        
+        window.onload = function() {
+            audio = document.getElementById("myAudio"); // Get the audio element
+        };
 
-// Listen for the click event on the image link
-document.getElementById("image-link").addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent the default link behavior
-    toggleAudio(); // Toggle audio playback
-});
+        function toggleAudio() {
+            if (audio.paused) {
+                playAudio();
+            } else {
+                stopAudio();
+            }
+        }
 
-function toggleAudio() {
-    if (audio.paused) {
-        playAudio();
-    } else {
-        stopAudio();
-    }
-}
+        function playAudio() {
+            audio.play()
+                .then(() => {
+                    // Audio is playing
+                })
+                .catch(error => {
+                    console.error("Audio playback error:", error);
+                    alert("Audio playback is blocked by the browser. Please interact with the page to play audio.");
+                });
+        }
 
-function playAudio() {
-    audio.play()
-        .then(() => {
-            // Audio is playing
-        })
-        .catch(error => {
-            console.error("Audio playback error:", error);
-            alert("Audio playback is blocked by the browser. Please interact with the page to play audio.");
-        });
-}
-
-function stopAudio() {
-    audio.pause();
-    audio.currentTime = 0;
-}
+        function stopAudio() {
+            audio.pause();
+            audio.currentTime = 0;
+        }
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
