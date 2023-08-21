@@ -238,7 +238,7 @@
     <!-- End Home -->
     
     <audio id="myAudio" autoplay loop>
-        <source src="audio.mp3" type="audio/mp3">
+        <source src="audio.m4a" type="audio/mp4">
         Your browser does not support the audio element.
     </audio>
 
@@ -359,22 +359,35 @@
     <!-- End Footer -->
 
     <script>
-        // Function to play the audio
-        function playAudio() {
-            var audio = document.getElementById("myAudio");
+        var audio = document.getElementById("myAudio");
+    var isAudioPlaying = false;
 
-            // Check if the audio is paused, if yes, play it
-            if (audio.paused) {
-                audio.play()
-                    .then(() => {
-                        // Autoplay started
-                    })
-                    .catch(error => {
-                        // Autoplay prevented by browser
-                        // Handle the error or provide user instructions
-                    });
-            }
+    // Function to toggle audio playback
+    function toggleAudio() {
+        if (isAudioPlaying) {
+            audio.pause();
+        } else {
+            audio.play()
+                .then(() => {
+                    // Autoplay started
+                })
+                .catch(error => {
+                    // Autoplay prevented by browser
+                    // Handle the error or provide user instructions
+                });
         }
+        isAudioPlaying = !isAudioPlaying;
+    }
+    
+    // Function to attach image click listener
+    function attachImageClickListener() {
+        var image = document.getElementById("myPhoto");
+        image.addEventListener("click", toggleAudio);
+    }
+
+    document.getElementById("header-name").addEventListener("click", function() {
+        alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
+    });
         document.getElementById("header-name").addEventListener("click", function() {
         alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
     });
