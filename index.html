@@ -359,11 +359,13 @@
     <!-- End Footer -->
 
     <script>
-var audio; // Declare the audio variable globally
-        
-        window.onload = function() {
-            audio = document.getElementById("myAudio"); // Get the audio element
-        };
+var audio = document.getElementById("myAudio");
+
+        // Toggle audio playback when the image is clicked
+        document.getElementById("image-link").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            toggleAudio();
+        });
 
         function toggleAudio() {
             if (audio.paused) {
@@ -388,6 +390,11 @@ var audio; // Declare the audio variable globally
             audio.pause();
             audio.currentTime = 0;
         }
+
+        // This code is to prevent audio playback when the page is closed or navigated away
+        window.addEventListener("beforeunload", function() {
+            stopAudio();
+        });
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
