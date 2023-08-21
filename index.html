@@ -360,24 +360,32 @@
     <!-- End Footer -->
 
     <script>
-var audio = document.getElementById("myAudio"); // Get the audio element
-var playButton = document.getElementById("playButton"); // Get the play button element
+var audio = document.getElementById("myAudio");
+var playButton = document.getElementById("playButton");
+var closeButton = document.getElementById("closeButton");
 
 function playAudio() {
     audio.play()
         .then(() => {
-            playButton.style.display = "none"; // Hide the play button
+            playButton.style.display = "none";
+            closeButton.style.display = "block";
         })
         .catch(error => {
-            console.error("Audio playback error:", error); // Log the error
-            alert("Audio playback is blocked by the browser."); // Provide user feedback
+            console.error("Audio playback error:", error);
+            alert("Audio playback is blocked by the browser.");
         });
 }
 
-// Attach the playAudio function to the button click event
-playButton.addEventListener("click", playAudio);
+function stopAudio() {
+    audio.pause();
+    audio.currentTime = 0;
+    closeButton.style.display = "none";
+    playButton.style.display = "block";
+}
 
-
+window.addEventListener("beforeunload", function() {
+    stopAudio();
+});
 document.getElementById("header-name").addEventListener("click", function() {
     alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
 });
