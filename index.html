@@ -215,6 +215,7 @@
                         Madhav Agarwal
                     </font>
                 </a>
+                <span id="welcomeMessage" style="display: none;"></span>
             </td>
             <td>
                 <a href="#home">Home</a>
@@ -383,6 +384,14 @@ function stopAudio() {
         isAudioPlaying = false;
     }
 }
+        function showWelcomeMessage() {
+            const welcomeMessage = document.getElementById("welcomeMessage");
+            welcomeMessage.textContent = "Welcome, visitor!";
+            welcomeMessage.style.display = "inline-block";
+            setTimeout(() => {
+                welcomeMessage.style.display = "none";
+            }, 3000); // Hide the message after 3 seconds
+        }
 
     document.getElementById("contact-form").addEventListener("submit", function(event) {
         event.preventDefault();
