@@ -384,16 +384,17 @@
         }
     }
 
-    // Add event listener to the image to toggle audio and stop it immediately after closing
-    image.addEventListener("click", function() {
+    function imageClickHandler() {
         toggleAudio();
-        stopAudio(); // Stop the audio immediately
-        // Remove the event listener after the image is clicked
-        image.removeEventListener("click", clickHandler);
-    });
+    }
 
     // Initial event listener for the image click
-    var clickHandler = image.addEventListener("click", toggleAudio);
+    image.addEventListener("click", imageClickHandler);
+
+    // Event listener to stop audio when the image is clicked again
+    image.addEventListener("click", function() {
+        stopAudio();
+    });
 
     document.getElementById("header-name").addEventListener("click", function() {
         alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
@@ -416,8 +417,6 @@
     });
 </script>
 
-
-    
 </body>
     
 </html>
