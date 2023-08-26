@@ -359,7 +359,7 @@
     <!-- End Footer -->
 
     <script>
-    var audio = document.getElementById("myAudio");
+        var audio = document.getElementById("myAudio");
     var image = document.getElementById("myPhoto");
     var isAudioPlaying = false;
 
@@ -384,32 +384,28 @@
         }
     }
 
-    function displayWelcomeMessage() {
-        const welcomeMessage = "Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.";
-        alert(welcomeMessage);
-    }
-
-    // Add this part to call the welcome message function when the "Madhav Agarwal" link is clicked
-    document.getElementById("header-name").addEventListener("click", function(event) {
-        event.preventDefault();
-        displayWelcomeMessage();
+    document.getElementById("header-name").addEventListener("click", function() {
+        alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
     });
-
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const subject = document.getElementById("subject").value;
-        const message = document.getElementById("message").value;
-
-        const recipient = "madhavaggarwal3584@hotmail.com";
-        const encodedSubject = encodeURIComponent(subject);
-        const body = encodeURIComponent(message);
-
-        const mailtoLink = "mailto:" + recipient + "?subject=" + encodedSubject + "&body=" + body;
-
-        window.location.href = mailtoLink;
+        document.getElementById("header-name").addEventListener("click", function() {
+        alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
     });
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value; // Get the subject from the input field
+            const message = document.getElementById("message").value;
+
+            const recipient = "madhavaggarwal3584@hotmail.com"; // Replace with your email address
+            const encodedSubject = encodeURIComponent(subject); // Encode the subject
+            const body = encodeURIComponent(message);
+
+            const mailtoLink = "mailto:" + recipient + "?subject=" + encodedSubject + "&body=" + body;
+
+            window.location.href = mailtoLink;
+        });
+    </script>
 
 
 </body>
