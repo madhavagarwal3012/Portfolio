@@ -360,55 +360,55 @@
     <!-- End Footer -->
 
     <script>
-    var audio = document.getElementById("myAudio");
-var image = document.getElementById("myPhoto");
-var isAudioPlaying = false;
+        var audio = document.getElementById("myAudio");
+        var isAudioPlaying = true; // Set to true since it's autoplaying
 
-function toggleAudio() {
-    if (isAudioPlaying) {
-        stopAudio();
-    } else {
-        playAudio();
-    }
-}
-
-function playAudio() {
-    audio.play();
-    isAudioPlaying = true;
-}
-
-function stopAudio() {
-    if (!audio.paused) {
-        audio.pause();
-        audio.currentTime = 0;
-        isAudioPlaying = false;
-    }
-}
-        function showWelcomeMessage() {
-            const welcomeMessage = document.getElementById("welcomeMessage");
-            welcomeMessage.textContent = "Welcome, visitor!";
-            welcomeMessage.style.display = "inline-block";
-            setTimeout(() => {
-                welcomeMessage.style.display = "none";
-            }, 3000); // Hide the message after 3 seconds
+        function toggleAudio() {
+            if (isAudioPlaying) {
+                stopAudio();
+            } else {
+                playAudio();
+            }
         }
 
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const subject = document.getElementById("subject").value;
-        const message = document.getElementById("message").value;
+        function playAudio() {
+            audio.play();
+            isAudioPlaying = true;
+        }
 
-        const recipient = "madhavaggarwal3584@hotmail.com";
-        const encodedSubject = encodeURIComponent(subject);
-        const body = encodeURIComponent(message);
+        function stopAudio() {
+            if (!audio.paused) {
+                audio.pause();
+                audio.currentTime = 0;
+                isAudioPlaying = false;
+            }
+        }
 
-        const mailtoLink = "mailto:" + recipient + "?subject=" + encodedSubject + "&body=" + body;
+        const homeSection = document.getElementById("home");
+        const headerNameLink = document.getElementById("header-name");
 
-        window.location.href = mailtoLink;
-    });
-</script>
+        headerNameLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            homeSection.style.display = "block"; // Display the home section
+            window.scrollTo({ top: homeSection.offsetTop, behavior: "smooth" }); // Scroll to the home section
+        });
+
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+
+            const recipient = "madhavaggarwal3584@hotmail.com";
+            const encodedSubject = encodeURIComponent(subject);
+            const body = encodeURIComponent(message);
+
+            const mailtoLink = "mailto:" + recipient + "?subject=" + encodedSubject + "&body=" + body;
+
+            window.location.href = mailtoLink;
+        });
+    </script>
 
 
 
