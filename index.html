@@ -215,7 +215,6 @@
                         Madhav Agarwal
                     </font>
                 </a>
-                <span id="welcomeMessage" style="display: none;"></span>
             </td>
             <td>
                 <a href="#home">Home</a>
@@ -239,7 +238,7 @@
     <!-- End Home -->
     
     <audio id="myAudio" autoplay loop>
-        <source src="audio.mp3" type="audio/mp3">
+        <source src="audio.m4a" type="audio/mp4">
         Your browser does not support the audio element.
     </audio>
 
@@ -360,53 +359,54 @@
     <!-- End Footer -->
 
     <script>
-    var audio = document.getElementById("myAudio");
-    var image = document.getElementById("myPhoto");
-    var isAudioPlaying = false;
+        var audio = document.getElementById("myAudio");
+    	var image = document.getElementById("myPhoto");
+    	var isAudioPlaying = false;
 
-    function toggleAudio() {
-        if (isAudioPlaying) {
-            stopAudio();
-        } else {
-            playAudio();
-        }
-    }
+    	function toggleAudio() {
+        	if (isAudioPlaying) {
+            		stopAudio();
+        	} 
+		else {
+            		playAudio();
+        	}
+    	}
 
-    function playAudio() {
-        audio.play();
-        isAudioPlaying = true;
-    }
+    	function playAudio() {
+        	audio.play();
+        	isAudioPlaying = true;
+    	}
 
-    function stopAudio() {
-        if (!audio.paused) {
-            audio.pause();
-            audio.currentTime = 0;
-            isAudioPlaying = false;
-        }
-    }
+    	function stopAudio() {
+        	if (!audio.paused) {
+            		audio.pause();
+            		audio.currentTime = 0;
+            		isAudioPlaying = false;
+        	}
+    	}
 
-    function displayWelcomeMessage() {
-        const welcomeMessage = "Welcome to my portfolio!";
-        alert(welcomeMessage);
-    }
-
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const subject = document.getElementById("subject").value;
-        const message = document.getElementById("message").value;
-
-        const recipient = "madhavaggarwal3584@hotmail.com";
-        const encodedSubject = encodeURIComponent(subject);
-        const body = encodeURIComponent(message);
-
-        const mailtoLink = "mailto:" + recipient + "?subject=" + encodedSubject + "&body=" + body;
-
-        window.location.href = mailtoLink;
+    document.getElementById("header-name").addEventListener("click", function() {
+        alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
     });
-</script>
+        document.getElementById("header-name").addEventListener("click", function() {
+        alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
+    });
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value; // Get the subject from the input field
+            const message = document.getElementById("message").value;
 
+            const recipient = "madhavaggarwal3584@hotmail.com"; // Replace with your email address
+            const encodedSubject = encodeURIComponent(subject); // Encode the subject
+            const body = encodeURIComponent(message);
+
+            const mailtoLink = "mailto:" + recipient + "?subject=" + encodedSubject + "&body=" + body;
+
+            window.location.href = mailtoLink;
+        });
+    </script>
 
 
 </body>
