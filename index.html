@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Mode</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 32px;
+            margin-top: 40px;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .mode-button {
+            font-size: 24px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .light-button {
+            background-color: #fff;
+            color: #f3971b;
+        }
+
+        .dark-button {
+            background-color: #000;
+            color: #f3971b;
+        }
+        
+        .light-button:focus,
+        .dark-button:focus {
+            outline: none; 
+        }
+        
+        .light-button:active,
+        .dark-button:active {
+            background-color: inherit; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome To My Portfolio</h1>
+    <p>Choose your preferred mode:</p>
+    <button class="mode-button light-button" onclick="setMode('light')">Light Mode</button>
+    <button class="mode-button dark-button" onclick="setMode('dark')">Dark Mode</button>
+
+    <script>
+        function setMode(mode) {
+            localStorage.setItem('preferredMode', mode);
+
+            if (mode === 'light') {
+                window.location.href = 'https://madhavagarwal3012.github.io/Portfolio/Light%20Mode/index.html';
+            } else {
+                window.location.href = 'https://madhavagarwal3012.github.io/Portfolio/Dark%20Mode/index.html';
+            }
+        }
+    </script>
+</body>
+</html>
