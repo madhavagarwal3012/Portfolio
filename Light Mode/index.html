@@ -413,17 +413,62 @@
     </table>
     <!-- End Footer -->
 
-    <!-- JavaScript to toggle audio -->
     <script>
-        function toggleAudio() {
-            var audio = document.getElementById("myAudio");
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
+    var audio = document.getElementById("myAudio");
+    var image = document.getElementById("myPhoto");
+    var isAudioPlaying = false;
+
+    function toggleAudio() {
+        if (isAudioPlaying) {
+            stopAudio();
+        } else {
+            playAudio();
         }
-    </script>
+    }
+
+    function playAudio() {
+        audio.play();
+        isAudioPlaying = true;
+    }
+
+    function stopAudio() {
+        if (!audio.paused) {
+            audio.pause();
+            audio.currentTime = 0;
+            isAudioPlaying = false;
+        }
+    }
+
+    function imageClickHandler() {
+        toggleAudio();
+        stopAudio(); // Stop the audio immediately
+        // Remove the event listener after the image is clicked
+        image.removeEventListener("click", imageClickHandler);
+    }
+
+    // Add event listener to the image to toggle audio and stop it immediately after closing
+    image.addEventListener("click", imageClickHandler);
+
+    document.getElementById("header-name").addEventListener("click", function() {
+        alert("Welcome to the light mode, I'm Madhav Agarwal! Thanks for visiting.");
+    });
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
+
+        const recipient = "madhavaggarwal3584@hotmail.com";
+        const encodedSubject = encodeURIComponent(subject);
+        const body = encodeURIComponent(message);
+
+        const mailtoLink = "mailto:" + recipient + "?subject=" + encodedSubject + "&body=" + body;
+
+        window.location.href = mailtoLink;
+    });
+</script>
 </body>
 
 </html>
