@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        a {
+            text-decoration: none;
+            color: #f3971b;
+        }
+        /* Header */
+        #header {
+            background-color: #292929;
+            text-align: center;
+            padding: 15px;
+        }
+        #header a {
+            margin: 0 15px;
+            color: #ffffff;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        #header a:hover {
+            color: #f3971b;
+        }
+        /* Home */
+        #home {
+            background-color: rgba(41, 41, 41, 0.9);
+            text-align: center;
+            padding: 80px 0;
+        }
+        #home h3 {
+            font-size: 36px;
+            color: #ffffff;
+            margin: 0;
+        }
+        #home h2 {
+            font-size: 48px;
+            color: #f3971b;
+            margin-top: 20px;
+        }
+        /* About */
+        #about {
+            background-color: rgba(41, 41, 41, 0.9);
+            text-align: center;
+            padding: 80px 0;
+            color: #ffffff;
+        }
+        #about img {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        #about h2 {
+            font-size: 36px;
+            color: #f3971b;
+            margin-bottom: 10px;
+        }
+        #about p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        /* Achievements */
+        #achievements {
+            background-color: rgba(41, 41, 41, 0.9);
+            text-align: center;
+            padding: 80px 0;
+            color: #ffffff;
+        }
+        #achievements .section-title {
+            font-size: 36px;
+            color: #f3971b;
+            margin-bottom: 20px;
+        }
+        #achievements ul {
+            text-align: left;
+            list-style: none;
+            padding-left: 0;
+        }
+        #achievements li {
+            font-size: 18px;
+            color: #ffffff;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        #achievements .achievement-date {
+            color: #f3971b;
+            margin-right: 8px;
+        }
+        #achievements .achievement-link {
+            text-decoration: none;
+            color: #f3971b;
+            margin-left: 8px;
+        }
+        /* Contact */
+        #contact {
+            background-color: rgba(41, 41, 41, 0.9);
+            text-align: center;
+            padding: 80px 0;
+        }
+        #contact .section-title {
+            font-size: 36px;
+            color: #f3971b;
+            margin-bottom: 20px;
+        }
+        #contact input[type="text"],
+        #contact textarea {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            background-color: rgba(53, 53, 53, 0.9);
+            color: #ffffff;
+        }
+        #contact textarea {
+            resize: none;
+        }
+        #contact button {
+            background-color: #f3971b;
+            color: #292929;
+            padding: 15px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #contact button:hover {
+            background-color: #e08317;
+        }
+        /* Footer */
+        #footer {
+            background-color: #292929;
+            text-align: center;
+            padding: 20px 0;
+        }
+        #footer a {
+            margin: 0 10px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+        #footer img {
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+/* Responsive Styles */
+        @media (max-width: 768px) {
+            /* Header */
+            #header {
+                display: block;
+            }
+            #header a {
+                display: block;
+                margin: 10px 0;
+            }
+            /* Contact */
+            #contact input[type="text"],
+            #contact textarea {
+                width: 80%;
+                max-width: 350px;
+            }
+            #contact button {
+                width: 80%;
+                max-width: 350px;
+            }
+            /* About */
+            #about img {
+                max-width: 150px;
+            }
+            /* Achievements */
+            #achievements {
+                padding: 50px 0;
+            }
+            #achievements .section-title {
+                font-size: 30px;
+            }
+            #achievements li {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            /* Footer */
+            #footer a {
+                font-size: 16px;
+                margin: 0 5px; /* Adjust spacing as needed */
+            }
+            #footer img {
+                vertical-align: middle;
+                margin-right: 3px; /* Adjust spacing as needed */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <table id="header" border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <a href="#" id="header-name">
+                    <font face="arial" color="#f3971b" size="24">
+                        <span class="fa fa-user-circle" aria-hidden="true"></span>
+                        Madhav Agarwal
+                    </font>
+                </a>
+            </td>
+            <td>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#contact">Contact</a>
+            </td>
+        </tr>
+    </table>
+    <!-- End Header -->
+
+    <!-- Home -->
+    <table id="home" border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <h3>Hi, I'm Madhav Agarwal</h3>
+                <h2>Java Programmer</h2>
+            </td>
+        </tr>
+    </table>
+    <!-- End Home -->
+    
+    <audio id="myAudio" autoplay loop>
+        <source src="audio.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- About -->
+    <table id="about" border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <!-- Added onclick attribute to the image -->
+                <a href="https://media.licdn.com/dms/image/D4E03AQEiQnGbXoGmzw/profile-displayphoto-shrink_400_400/0/1688436284090?e=1697673600&v=beta&t=ZobAfNqtG7-v3oei8T2GeX224YTEFg806y2qyWBq4lw" target="_blank">
+                    <img id="myPhoto" src="https://media.licdn.com/dms/image/D4E03AQEiQnGbXoGmzw/profile-displayphoto-shrink_400_400/0/1688436284090?e=1697673600&v=beta&t=ZobAfNqtG7-v3oei8T2GeX224YTEFg806y2qyWBq4lw" alt="Madhav Agarwal" onclick="toggleAudio()">
+                </a>
+                <h2>I am a passionate coder</h2>
+                <p>👋 Hi there! I’m a web developer in the making, learning from Coding Ninja’s full stack web development course. I have a solid foundation in Python, SQL, Java, and DSA. I enjoy discovering new tools and techniques to make awesome web apps. I’m looking for opportunities to apply my skills and creativity to real-world projects. I value teamwork, problem-solving, and continuous improvement as the keys to success. 🚀<br>
+                    🎓 I have just finished my class 12th from GD Goenka Public School, where I spent my entire school life. I have always been an avid and curious learner, participating in various academic and co-curricular activities. I have earned certificates of excellence in Java from Coding Ninja, and certificates of completion in Python and SQL from SoloLearn. I have also aced the LinkedIn skill assessment test in Python. I’m proud of my achievements and thankful for the support of my teachers, mentors, and friends. 🙌<br>
+                    👩‍💻 I’m currently pursuing my BCA Honours from the prestigious Jaypee Institute of Information Technology (JIIT, Noida). Taking my web development skills to the next level and exploring new technologies. Excited to apply my expertise and creativity in building amazing and user-friendly web apps. 💯</p>
+            </td>
+        </tr>
+    </table>
+    <!-- End About -->
+
+    <!-- Achievements -->
+    <table id="achievements" border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <h2 class="section-title">Achievements</h2>
+                <ul>
+                    <li><span class="bullet"></span> Completed class 12th from GD Goenka Public School.</li>
+                    <li><span class="bullet"></span> Earned Certificates of Completion and Excellence in Java from Coding Ninja. <a href="https://certificate.codingninjas.com/verify/241519d9143b7652" target="_blank">View Completion Certificate</a>, <a href="https://certificate.codingninjas.com/verify/306ce66a2dbf41f0" target="_blank">View Excellence Certificate</a></li>
+                    <li><span class="bullet"></span> Earned Certificates of Completion in Python and SQL from SoloLearn. <a href="https://www.sololearn.com/Certificate/CC-QWVRHYXR/png" target="_blank">View Python Certificate</a>, <a href="https://www.sololearn.com/Certificate/CC-USFWTJ7R/png" target="_blank">View SQL Certificate</a></li>
+                    <li><span class="bullet"></span> Aced the LinkedIn skill assessment test in Python.</li>
+                </ul>
+                <p>I'm proud of my achievements and thankful for the support of my teachers, mentors, and friends. These experiences have strengthened my skills and dedication as a Java programmer and motivated me to keep exploring new technologies and challenges.</p>
+            </td>
+        </tr>
+    </table>
+    <!-- End Achievements -->
+
+    <style>
+        #achievements ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .bullet:before {
+            content: "\2022";
+            color: #f3971b;
+            margin-right: 10px;
+        }
+    </style>
+
+    <!-- Contact -->
+    <table id="contact" border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td style="text-align: center;">
+                <form id="contact-form" class="contact-form">
+                    <h2 class="section-title">Contact</h2>
+                    <input type="text" id="name" name="name" placeholder="Name" required style="width: 400px; color: #ffffff;">
+                    <br>
+                    <input type="text" id="email" name="email" placeholder="Email" required style="width: 400px; color: #ffffff;">
+                    <br>
+                    <input type="text" id="subject" name="subject" placeholder="Subject" style="width: 400px; color: #ffffff;">
+                    <br>
+                    <textarea id="message" name="message" rows="5" placeholder="Message" required style="width: 400px; color: #ffffff;"></textarea>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <!-- End Contact -->
+
+    <!-- Footer -->
+    <table id="footer" border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <a href="https://www.linkedin.com/in/madhavagarwal3012/" target="_blank">
+                    <img src="https://th.bing.com/th?id=ODLS.9b09ead8-820d-4f04-8404-a0e4ca630dc2&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="LinkedIn">
+                    LinkedIn
+                </a>
+                &nbsp; &nbsp;
+                <a href="https://twitter.com/madhvagrwal3012" target="_blank">
+                    <img src="https://th.bing.com/th?id=ODLSF.622ceebf-d807-45da-bb82-707dd9e5c357&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="Twitter">
+                    Twitter
+                </a>
+                &nbsp; &nbsp;
+                <a href="https://youtube.com/@madhavagarwal3012" target="_blank">
+                    <img src="https://th.bing.com/th?id=ODLSF.9a365218-682d-416f-a538-2d4c79e9d305&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="YouTube">
+                    YouTube
+                </a>
+                &nbsp; &nbsp;
+                <a href="mailto:madhavaggarwal3584@hotmail.com" target="_blank">
+                    <img src="https://th.bing.com/th?id=ODLS.5e7ae0d8-1132-4a2a-8aa8-cb76156d41b8&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="Email">
+                    Email
+                </a>
+                &nbsp; &nbsp;
+                <a href="https://github.com/madhavagarwal3012" target="_blank">
+                    <img src="https://th.bing.com/th?id=ODLS.fe916855-7a5a-4f44-b52e-1c5c31f0329d&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="GitHub">
+                    GitHub
+                </a>
+                &nbsp; &nbsp;
+                <a href="https://leetcode.com/madhavagarwal3012/" target="_blank">
+                    <img src="https://th.bing.com/th?id=ODLS.d12199cd-5cdf-4fb6-81b3-6e18455eaf9c&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2">
+                    LeetCode
+                </a>
+                &nbsp; &nbsp;
+                <a href="https://www.hackerrank.com/madhvagarwal3012?hr_r=1" target="_blank">
+                    <img src="https://th.bing.com/th?id=ODLS.9c5c4e70-2eae-4474-8b38-0caa354a4865&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="HackerRank">
+                    HackerRank
+                </a>
+                &nbsp; &nbsp;
+                <a href="https://auth.geeksforgeeks.org/user/madhavagarwal3012" target="_blank">
+                    <img src="https://media.geeksforgeeks.org/gfg-gg-logo.svg" alt="GeeksforGeeks">
+                    GeeksforGeeks
+                </a>
+            </td>
+        </tr>
+    </table>
+    <!-- End Footer -->
+
+    <script>
+    var audio = document.getElementById("myAudio");
+    var image = document.getElementById("myPhoto");
+    var isAudioPlaying = false;
+
+    function toggleAudio() {
+        if (isAudioPlaying) {
+            stopAudio();
+        } else {
+            playAudio();
+        }
+    }
+
+    function playAudio() {
+        audio.play();
+        isAudioPlaying = true;
+    }
+
+    function stopAudio() {
+        if (!audio.paused) {
+            audio.pause();
+            audio.currentTime = 0;
+            isAudioPlaying = false;
+        }
+    }
+
+    function imageClickHandler() {
+        toggleAudio();
+        stopAudio(); // Stop the audio immediately
+        // Remove the event listener after the image is clicked
+        image.removeEventListener("click", imageClickHandler);
+    }
+
+    // Add event listener to the image to toggle audio and stop it immediately after closing
+    image.addEventListener("click", imageClickHandler);
+
+    document.getElementById("header-name").addEventListener("click", function() {
+        alert("Welcome to my portfolio, I'm Madhav Agarwal! Thanks for visiting.");
+    });
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
+
+        const recipient = "madhavaggarwal3584@hotmail.com";
+        const encodedSubject = encodeURIComponent(subject);
+        const body = encodeURIComponent(message);
+
+        const mailtoLink = "mailto:" + recipient + "?subject=" + encodedSubject + "&body=" + body;
+
+        window.location.href = mailtoLink;
+    });
+</script>
+
+</body>
+    
+</html>

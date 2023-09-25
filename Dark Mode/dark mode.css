@@ -1,0 +1,194 @@
+/* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        a {
+            text-decoration: none;
+            color: #f3971b;
+        }
+        /* Header */
+        #header {
+            background-color: #292929;
+            text-align: center;
+            padding: 15px;
+        }
+        #header a {
+            margin: 0 15px;
+            color: #ffffff;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        #header a:hover {
+            color: #f3971b;
+        }
+        /* Home */
+        #home {
+            background-color: rgba(41, 41, 41, 0.9);
+            text-align: center;
+            padding: 80px 0;
+        }
+        #home h3 {
+            font-size: 36px;
+            color: #ffffff;
+            margin: 0;
+        }
+        #home h2 {
+            font-size: 48px;
+            color: #f3971b;
+            margin-top: 20px;
+        }
+        /* About */
+        #about {
+            background-color: rgba(41, 41, 41, 0.9);
+            text-align: center;
+            padding: 80px 0;
+            color: #ffffff;
+        }
+        #about img {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        #about h2 {
+            font-size: 36px;
+            color: #f3971b;
+            margin-bottom: 10px;
+        }
+        #about p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        /* Achievements */
+        #achievements {
+            background-color: rgba(41, 41, 41, 0.9);
+            text-align: center;
+            padding: 80px 0;
+            color: #ffffff;
+        }
+        #achievements .section-title {
+            font-size: 36px;
+            color: #f3971b;
+            margin-bottom: 20px;
+        }
+        #achievements ul {
+            text-align: left;
+            list-style: none;
+            padding-left: 0;
+        }
+        #achievements li {
+            font-size: 18px;
+            color: #ffffff;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        #achievements .achievement-date {
+            color: #f3971b;
+            margin-right: 8px;
+        }
+        #achievements .achievement-link {
+            text-decoration: none;
+            color: #f3971b;
+            margin-left: 8px;
+        }
+        /* Contact */
+        #contact {
+            background-color: rgba(41, 41, 41, 0.9);
+            text-align: center;
+            padding: 80px 0;
+        }
+        #contact .section-title {
+            font-size: 36px;
+            color: #f3971b;
+            margin-bottom: 20px;
+        }
+        #contact input[type="text"],
+        #contact textarea {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            background-color: rgba(53, 53, 53, 0.9);
+            color: #ffffff;
+        }
+        #contact textarea {
+            resize: none;
+        }
+        #contact button {
+            background-color: #f3971b;
+            color: #292929;
+            padding: 15px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #contact button:hover {
+            background-color: #e08317;
+        }
+        /* Footer */
+        #footer {
+            background-color: #292929;
+            text-align: center;
+            padding: 20px 0;
+        }
+        #footer a {
+            margin: 0 10px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+        #footer img {
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+/* Responsive Styles */
+        @media (max-width: 768px) {
+            /* Header */
+            #header {
+                display: block;
+            }
+            #header a {
+                display: block;
+                margin: 10px 0;
+            }
+            /* Contact */
+            #contact input[type="text"],
+            #contact textarea {
+                width: 80%;
+                max-width: 350px;
+            }
+            #contact button {
+                width: 80%;
+                max-width: 350px;
+            }
+            /* About */
+            #about img {
+                max-width: 150px;
+            }
+            /* Achievements */
+            #achievements {
+                padding: 50px 0;
+            }
+            #achievements .section-title {
+                font-size: 30px;
+            }
+            #achievements li {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            /* Footer */
+            #footer a {
+                font-size: 16px;
+                margin: 0 5px; /* Adjust spacing as needed */
+            }
+            #footer img {
+                vertical-align: middle;
+                margin-right: 3px; /* Adjust spacing as needed */
+            }
+        }
