@@ -1,25 +1,33 @@
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choose Your Mode</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
+            background-image: url('Background.png'); 
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         h1 {
-            color: #333;
-            font-size: 32px;
+            color: #f3971b;
+            font-size: 36px;
             margin-top: 40px;
         }
 
         p {
-            color: #666;
             font-size: 18px;
             margin: 20px 0;
         }
@@ -32,6 +40,18 @@
             margin: 10px;
             cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease;
+            color: #fff;
+        }
+
+        .mode-button {
+            font-size: 24px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            color: #fff;
         }
 
         .light-button {
@@ -53,13 +73,27 @@
         .dark-button:active {
             background-color: inherit; 
         }
+
+        @media (max-width: 768px) {
+            .mode-button {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>Welcome To My Portfolio</h1>
     <p>Choose your preferred mode:</p>
-    <button class="mode-button light-button" onclick="setMode('light')">Light Mode</button>
-    <button class="mode-button dark-button" onclick="setMode('dark')">Dark Mode</button>
+    <div class="mode-buttons">
+        <button class="mode-button light-button" onclick="setMode('light')">Light Mode</button>
+        <button class="mode-button dark-button" onclick="setMode('dark')">Dark Mode</button>
+    </div>
 
     <script>
         function setMode(mode) {
