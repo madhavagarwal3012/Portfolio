@@ -282,7 +282,7 @@
     <!-- End Home -->
 
     <!-- Audio Element -->
-    <audio id="myAudio" loop autoplay="false">
+    <audio id="myAudio" loop>
         <source src="https://raw.githubusercontent.com/madhavagarwal3012/Portfolio/main/audio.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
@@ -458,11 +458,9 @@
 
     function imageClickHandler() {
         toggleAudio();
-        // Remove the event listener after the image is clicked
-        image.removeEventListener("click", imageClickHandler);
     }
 
-    // Add event listener to the image to toggle audio and remove the listener
+    // Add event listener to the image to toggle audio
     image.addEventListener("click", imageClickHandler);
 
     document.getElementById("header-name").addEventListener("click", function() {
