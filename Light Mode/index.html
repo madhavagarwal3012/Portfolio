@@ -433,25 +433,22 @@
     <script>
     var audio = document.getElementById("myAudio");
     var image = document.getElementById("myPhoto");
-    var isAudioPlaying = false;
 
     function toggleAudio() {
-        if (isAudioPlaying) {
-            stopAudio();
-        } else {
+        if (audio.paused) {
             playAudio();
+        } else {
+            stopAudio();
         }
     }
 
     function playAudio() {
         audio.play();
-        isAudioPlaying = true;
     }
 
     function stopAudio() {
         audio.pause();
         audio.currentTime = 0;
-        isAudioPlaying = false;
     }
 
     // Add event listener to the image to toggle audio
