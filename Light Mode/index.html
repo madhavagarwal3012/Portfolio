@@ -449,19 +449,13 @@
     }
 
     function stopAudio() {
-        if (!audio.paused) {
-            audio.pause();
-            audio.currentTime = 0;
-            isAudioPlaying = false;
-        }
-    }
-
-    function imageClickHandler() {
-        toggleAudio();
+        audio.pause();
+        audio.currentTime = 0;
+        isAudioPlaying = false;
     }
 
     // Add event listener to the image to toggle audio
-    image.addEventListener("click", imageClickHandler);
+    image.addEventListener("click", toggleAudio);
 
     document.getElementById("header-name").addEventListener("click", function() {
         alert("Welcome to dark mode, I'm Madhav Agarwal! Thanks for visiting.");
