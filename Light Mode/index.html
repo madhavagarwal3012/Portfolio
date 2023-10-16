@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -247,7 +246,6 @@
         }
     </style>
 </head>
-
 <body>
     <!-- Header -->
     <table id="header" border="0" width="100%" cellpadding="0" cellspacing="0">
@@ -265,6 +263,9 @@
                 <a href="#about">About</a>
                 <a href="#achievements">Achievements</a>
                 <a href="#contact">Contact</a>
+                <a href="https://madhavagarwal3012.github.io/Portfolio/Dark%20Mode/index.html" target="_blank">
+                    <span id="moon-emoji" style="font-size: 24px; position: absolute; top: 10px; right: 10px;">🌙</span>
+                </a>
             </td>
         </tr>
     </table>
@@ -324,7 +325,7 @@
                 <h2 class="section-title">Achievements</h2>
                 <ul>
                     <li><span class="bullet"></span> Completed class 12th from GD Goenka Public School.</li>
-                    <li><span class "bullet"></span> Earned Certificates of Completion and Excellence in Java from
+                    <li><span class="bullet"></span> Earned Certificates of Completion and Excellence in Java from
                         Coding Ninja. <a href="https://certificate.codingninjas.com/verify/241519d9143b7652"
                             target="_blank">View Completion Certificate</a>, <a
                             href="https://certificate.codingninjas.com/verify/306ce66a2dbf41f0"
@@ -353,7 +354,7 @@
                     <input type="text" id="name" name="name" placeholder="Name" required
                         style="width: 400px; color: #292929;">
                     <br>
-                    <input type="text" id="email" name "email" placeholder="Email" required
+                    <input type="text" id="email" name="email" placeholder="Email" required
                         style="width: 400px; color: #292929;">
                     <br>
                     <input type="text" id="subject" name="subject" placeholder="Subject"
@@ -418,7 +419,7 @@
     <!-- End Footer -->
 
     <script>
-    var audio = document.getElementById("myAudio");
+        var audio = document.getElementById("myAudio");
 
         function toggleAudio() {
             if (audio.paused) {
@@ -429,26 +430,25 @@
             }
         }
 
-    document.getElementById("header-name").addEventListener("click", function() {
-        alert("Welcome to dark mode, I'm Madhav Agarwal! Thanks for visiting.");
-    });
+        document.getElementById("header-name").addEventListener("click", function() {
+            alert("Welcome to dark mode, I'm Madhav Agarwal! Thanks for visiting.");
+        });
 
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const subject = document.getElementById("subject").value;
-        const message = document.getElementById("message").value;
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
 
-        const recipient = "madhavaggarwal3584@hotmail.com";
-        const encodedSubject = encodeURIComponent(subject);
-        const body = encodeURIComponent(message);
+            const recipient = "madhavaggarwal3584@hotmail.com";
+            const encodedSubject = encodeURIComponent(subject);
+            const body = encodeURIComponent(message);
 
-        const mailtoLink = "mailto:" + recipient + "?subject=" + encodedSubject + "&body=" + body;
+            const mailtoLink = "mailto:" + recipient + "?subject=" + encodedSubject + "&body=" + body;
 
-        window.location.href = mailtoLink;
-    });
+            window.location.href = mailtoLink;
+        });
     </script>
 </body>
-
 </html>
