@@ -6,25 +6,17 @@
     <title>Choose Your Mode</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #E1D9D1 50%, #000 50%);
             text-align: center;
             margin: 0;
             padding: 0;
-            background-image: url('https://raw.githubusercontent.com/madhavagarwal3012/Portfolio/main/Background.png'); 
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
         }
 
         h1 {
-            color: #f3971b;
-            font-size: 36px;
-            margin-top: 40px;
+            font-size: 32px;
+            margin: 0;
+            padding-top: 40px;
         }
 
         p {
@@ -37,21 +29,9 @@
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
-            margin: 10px;
+            margin: 10px 0; /* Remove the margin from the bottom */
             cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease;
-            color: #fff;
-        }
-
-        .mode-button {
-            font-size: 24px;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            color: #fff;
         }
 
         .light-button {
@@ -60,40 +40,35 @@
         }
 
         .dark-button {
-            background-color: #333;
+            background-color: #292929;
             color: #f3971b;
         }
-        
+
         .light-button:focus,
         .dark-button:focus {
-            outline: none; 
+            outline: none;
         }
-        
+
         .light-button:active,
         .dark-button:active {
-            background-color: inherit; 
+            background-color: inherit;
         }
 
-        @media (max-width: 768px) {
-            .mode-button {
-                font-size: 20px;
-            }
+        /* Style for the span elements */
+        .black-text {
+            color: #000;
         }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 24px;
-            }
+        .white-text {
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome To My Portfolio</h1>
-    <p>Choose your preferred mode:</p>
-    <div class="mode-buttons">
-        <button class="mode-button light-button" onclick="setMode('light')">Light Mode</button>
-        <button class="mode-button dark-button" onclick="setMode('dark')">Dark Mode</button>
-    </div>
+    <h1><span class="black-text">Welcome To</span> <span class="white-text">My Portfolio</span></h1>
+    <p><span class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose your</span> <span class="white-text">preferred mode</span>:</p>
+    <button class="mode-button light-button" onclick="setMode('light')">Light Mode</button>
+    <button class="mode-button dark-button" onclick="setMode('dark')">Dark Mode</button>
 
     <script>
         function setMode(mode) {
