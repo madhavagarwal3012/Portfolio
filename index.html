@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +6,20 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #E1D9D1 50%, #000 50%);
+            background-color: #f9f9f9;
             text-align: center;
             margin: 0;
             padding: 0;
         }
 
         h1 {
+            color: #333;
             font-size: 32px;
-            margin: 0;
-            padding-top: 40px;
+            margin-top: 40px;
         }
 
         p {
+            color: #666;
             font-size: 18px;
             margin: 20px 0;
         }
@@ -29,7 +29,7 @@
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
-            margin: 10px 0; /* Remove the margin from the bottom */
+            margin: 10px;
             cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
@@ -40,33 +40,24 @@
         }
 
         .dark-button {
-            background-color: #292929;
+            background-color: #000;
             color: #f3971b;
         }
-
+        
         .light-button:focus,
         .dark-button:focus {
-            outline: none;
+            outline: none; 
         }
-
+        
         .light-button:active,
         .dark-button:active {
-            background-color: inherit;
-        }
-
-        /* Style for the span elements */
-        .black-text {
-            color: #000;
-        }
-
-        .white-text {
-            color: #fff;
+            background-color: inherit; 
         }
     </style>
 </head>
 <body>
-    <h1><span class="black-text">Welcome To</span> <span class="white-text">My Portfolio</span></h1>
-    <p><span class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose your</span> <span class="white-text">preferred mode</span>:</p>
+    <h1>Welcome To My Portfolio</h1>
+    <p>Choose your preferred mode:</p>
     <button class="mode-button light-button" onclick="setMode('light')">Light Mode</button>
     <button class="mode-button dark-button" onclick="setMode('dark')">Dark Mode</button>
 
@@ -82,4 +73,4 @@
         }
     </script>
 </body>
-</html>
+</html> 
